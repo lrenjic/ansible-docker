@@ -1,0 +1,13 @@
+[docker_hosts]
+159.89.104.253
+
+[swarm:children]
+swarm_managers
+swarm_workers
+
+[swarm_managers]
+
+[swarm_workers]
+
+[compose]
+159.89.104.253

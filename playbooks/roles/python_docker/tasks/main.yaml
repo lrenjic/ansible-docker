@@ -1,0 +1,8 @@
+---
+- name: Install Docker module dependencies
+  ansible.builtin.package:
+    name:
+      - python3-pip
+      - python-requests
+      - python-docker
+    state: present

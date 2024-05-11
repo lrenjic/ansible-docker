@@ -1,0 +1,5 @@
+- name: Run Compose
+  hosts: compose
+  become: true
+  roles:
+    - compose_test1

@@ -1,0 +1,20 @@
+- name: Copy compose folder
+  ansible.builtin.copy:
+    src: test1
+    dest: /opt/compose/
+    mode: '0644'
+- name: Run 'docker-compose up'
+  community.docker.docker_compose_v2:
+    project_src: /opt/compose/test1
+    build: policy
+  register: output
+# - name: Show results
+#   ansible.builtin.debug:
+#     var: output
+# - ansible.builtin.assert:
+#     that: not output.changed
+- name: Verify that all services are running
+  ansible.builtin.assert:
+    that:
+      - "item.State == 'running'"
+  loop: "{{ output.containers }}"

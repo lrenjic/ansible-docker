@@ -1,0 +1,6 @@
+---
+docker_users:
+  - opc
+
+max_size: 500m
+max_file: 5

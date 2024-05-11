@@ -1,0 +1,8 @@
+---
+- name: Setup Docker Swarm
+  hosts: swarm
+  vars:
+    swarm_state: present
+  roles:
+    - python_docker
+    - docker_swarm
